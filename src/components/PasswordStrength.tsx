@@ -1,7 +1,6 @@
 export default function PasswordStrength() {
-  function handleIncludeLowercaseChange() {}
   return (
-    <div className="mb-2 mt-2  bg-Dark  text-black border-solid">
+    <div className="mb-2 mt-2 flex  bg-Dark  text-black border-solid">
       <label htmlFor="passworsdStrength">STRENGTH</label>
       <div>
         <div className="box"></div>
