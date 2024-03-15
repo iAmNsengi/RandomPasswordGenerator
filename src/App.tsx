@@ -64,9 +64,9 @@ export default function App() {
         <PasswordStrength />
         <button
           onClick={handleGeneratePassword}
-          className="px-4 py-2 bg-PastelGreen rounded-md shadow-md w-full border text-black border-solid hover:border-PastelGreen hover:text-PastelGreen hover:bg-BalticSea transition-all duration-300 uppercase"
+          className="px-4 py-2 bg-PastelGreen shadow-md w-full border text-black border-solid hover:border-PastelGreen hover:text-PastelGreen hover:bg-BalticSea transition-all duration-300 uppercase"
         >
-          generate
+          generate &#8594;
         </button>
       </div>
     </div>
