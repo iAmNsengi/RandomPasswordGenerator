@@ -4,6 +4,7 @@ import IncludeNumbers from "./components/IncludeNumbers";
 import IncludeSymbols from "./components/IncludeSymbols";
 import IncludeUppercase from "./components/IncludeUppercase";
 import PasswordLength from "./components/PasswordLength";
+import PasswordStrength from "./components/PasswordStrength";
 import { generatePassword } from "./utils/generatePassword";
 import { AiOutlineCopy } from "react-icons/ai";
 
@@ -24,9 +25,9 @@ export default function App() {
     });
     setPassword(newPassword);
   }
-  function handleCopyClick(){
-    if(password) {
-      navigator.clipboard.writeText(password)
+  function handleCopyClick() {
+    if (password) {
+      navigator.clipboard.writeText(password);
     }
   }
   return (
@@ -60,6 +61,7 @@ export default function App() {
           includeSymbols={includeSymbols}
           setIncludeSymbols={setIncludeSymbols}
         />
+        <PasswordStrength />
         <button
           onClick={handleGeneratePassword}
           className="px-4 py-2 bg-PastelGreen rounded-md shadow-md w-full border text-black border-solid hover:border-PastelGreen hover:text-PastelGreen hover:bg-BalticSea transition-all duration-300 uppercase"
