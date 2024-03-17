@@ -1,13 +1,12 @@
 import "./App.css";
 import { useState } from "react";
 import PasswordLength from "./components/PasswordLength";
-import IncludeLowerCase from "./components/IncludeLowerCase";
-import IncludeUpperCase from "./components/IncludeUpperCase";
 import IncludeNumbers from "./components/IncludeNumbers";
 import IncludeSymbols from "./components/IncludeSymbols";
 import generatePassword from "./utils/generatePassword";
 import { AiOutlineCopy } from "react-icons/ai";
-
+import IncludeLowerCase from "./components/IncludeLowerCase";
+import IncludeUpperCase from "./components/IncludeUpperCase";
 
 function App() {
   const [password, setPassword] = useState<string | null>(null);
