@@ -10,7 +10,7 @@ import { AiOutlineCopy } from "react-icons/ai";
 
 function App() {
   const [password, setPassword] = useState<string | null>(null);
-  const [passwordLength, setPasswordLength] = useState<number>(4);
+  const [passwordLength, setPasswordLength] = useState<number>(0);
   const [includeLowerCase, setIncludeLowerCase] = useState<boolean>(true);
   const [includeUpperCase, setIncludeUpperCase] = useState<boolean>(true);
   const [includeNumbers, setIncludeNumbers] = useState<boolean>(true);
@@ -41,23 +41,25 @@ function App() {
       <div>
         <label className="opacity-60">Password Generator</label>
       </div>
-      {password && (
-        <div className="bg-BalticSea text-white px-4 py-3 break-all flex justify-between items-center w-[20rem] mb-4">
-          <div className="text-base">{password}</div>
-          <button
-            className="text-xl text-PastelGreen flex items-center justify-between"
-            onClick={handleCopy}
-          >
-            <label
-              htmlFor="copyMessage"
-              className="copyMessage text-sm mr-2 hidden"
-            >
-              COPIED
-            </label>
-            <AiOutlineCopy />
-          </button>
+
+      <div className="bg-BalticSea text-white px-4 py-3 break-all flex justify-between items-center w-[20rem] mb-4">
+        <div className="text-base">
+          {password || <label className="opacity-50">P4$5W0rD!</label>}
         </div>
-      )}
+        <button
+          className="text-xl text-PastelGreen flex items-center justify-between"
+          onClick={handleCopy}
+        >
+          <label
+            htmlFor="copyMessage"
+            className="copyMessage text-sm mr-2 hidden"
+          >
+            COPIED
+          </label>
+          <AiOutlineCopy />
+        </button>
+      </div>
+
       <div className="w-[20rem] bg-BalticSea p-4">
         <PasswordLength
           passwordLength={passwordLength}

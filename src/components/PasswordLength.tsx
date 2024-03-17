@@ -14,12 +14,12 @@ export default function PasswordLength({
   return (
     <div className="mb-3 mt-2">
       <label className="flex justify-between items-center">
-        <div className="text-sm">Character Length</div>
+        <div className="text-xs">Character Length</div>
         <div className="text-xl text-PastelGreen">{passwordLength}</div>
       </label>
       <input
         type="range"
-        min="4"
+        min="0"
         max="20"
         id="passwordLength"
         value={passwordLength}
