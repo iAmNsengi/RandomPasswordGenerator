@@ -5,7 +5,7 @@ import IncludeNumbers from "./components/IncludeNumbers";
 import IncludeSymbols from "./components/IncludeSymbols";
 import generatePassword from "./utils/generatePassword";
 import { AiOutlineCopy } from "react-icons/ai";
-import IncludeLowerCase from "./components/IncludeLowerCase";
+import IncludeLowercase from "./components/IncludeLowerCase";
 import IncludeUpperCase from "./components/IncludeUpperCase";
 
 function App() {
@@ -69,7 +69,7 @@ function App() {
           includeUpperCase={includeUpperCase}
           setIncludeUpperCase={setIncludeUpperCase}
         />
-        <IncludeLowerCase
+        <IncludeLowercase
           includeLowerCase={includeLowerCase}
           setIncludeLowerCase={setIncludeLowerCase}
         />

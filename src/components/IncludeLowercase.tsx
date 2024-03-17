@@ -2,7 +2,7 @@ type includeLowerCaseProps = {
   includeLowerCase: boolean;
   setIncludeLowerCase: (include: boolean) => void;
 };
-export default function IncludeLowerCase({
+export default function IncludeLowercase({
   includeLowerCase,
   setIncludeLowerCase,
 }: includeLowerCaseProps) {
