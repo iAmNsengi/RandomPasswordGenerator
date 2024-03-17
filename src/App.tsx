@@ -5,8 +5,8 @@ import IncludeNumbers from "./components/IncludeNumbers";
 import IncludeSymbols from "./components/IncludeSymbols";
 import generatePassword from "./utils/generatePassword";
 import { AiOutlineCopy } from "react-icons/ai";
-import IncludeLowercase from "./components/IncludeLowerCase";
-import IncludeUpperCase from "./components/IncludeUpperCase";
+import IncludeLowerCase from "./components/IncludeLower";
+import IncludeUpperCase from "./components/IncludeUpper";
 
 function App() {
   const [password, setPassword] = useState<string | null>(null);
@@ -69,7 +69,7 @@ function App() {
           includeUpperCase={includeUpperCase}
           setIncludeUpperCase={setIncludeUpperCase}
         />
-        <IncludeLowercase
+        <IncludeLowerCase
           includeLowerCase={includeLowerCase}
           setIncludeLowerCase={setIncludeLowerCase}
         />
