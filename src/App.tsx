@@ -8,6 +8,7 @@ import IncludeSymbols from "./components/IncludeSymbols";
 import generatePassword from "./utils/generatePassword";
 import { AiOutlineCopy } from "react-icons/ai";
 
+
 function App() {
   const [password, setPassword] = useState<string | null>(null);
   const [passwordLength, setPasswordLength] = useState<number>(0);
