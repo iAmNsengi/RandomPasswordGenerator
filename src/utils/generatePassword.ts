@@ -1,33 +1,35 @@
 type GeneratePasswordOptions = {
   length: number;
-  includeUppercase: boolean;
-  includeLowercase: boolean;
+  includeUpperCase: boolean;
+  includeLowerCase: boolean;
   includeNumbers: boolean;
   includeSymbols: boolean;
 };
-const LOWERCASE_LETTERS = "abcdefghijklmnopqrstuvwxyz";
-const UPPERCASE_LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const NUMBERS = "0123456789";
-const SYMBOLS = "!@#$%^&*()_+-={}[]|;:<>,.?/~`";
+
+const UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const LOWERCASE = "abcdefghijklmnopqrstuvwxyz";
+const NUMBERS = "1234567890";
+const SYMBOLS = "!@#$%^&*()_-+={[}];:|<,>.?/~`";
 
 function generatePassword({
   length,
-  includeUppercase,
-  includeLowercase,
+  includeUpperCase,
+  includeLowerCase,
   includeNumbers,
   includeSymbols,
 }: GeneratePasswordOptions) {
   let chars = "";
-  if (includeUppercase) chars += UPPERCASE_LETTERS;
-  if (includeLowercase) chars += LOWERCASE_LETTERS;
-  if (includeNumbers) chars += NUMBERS;
+  if (includeUpperCase) chars += UPPERCASE;
+  if (includeLowerCase) chars += LOWERCASE;
   if (includeSymbols) chars += SYMBOLS;
+  if (includeNumbers) chars += NUMBERS;
 
   let password = "";
   for (let i = 0; i < length; i++) {
     password += chars.charAt(Math.floor(Math.random() * chars.length));
   }
+
   return password;
 }
 
-export { generatePassword };
+export default generatePassword;

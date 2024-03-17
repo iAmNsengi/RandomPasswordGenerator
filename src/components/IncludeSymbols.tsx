@@ -1,24 +1,26 @@
-type IncludeNumbersProps = {
+type includeSymbolsProps = {
   includeSymbols: boolean;
   setIncludeSymbols: (include: boolean) => void;
 };
+
 export default function IncludeSymbols({
   includeSymbols,
   setIncludeSymbols,
-}: IncludeNumbersProps) {
-  function handleIncludeSymbolsChange() {
+}: includeSymbolsProps) {
+  function handleIncludesymbolsChange() {
     setIncludeSymbols(!includeSymbols);
   }
   return (
-    <div className="mb-2">
+    <div>
       <input
-        type="checkbox"
         id="includeSymbols"
-        checked={includeSymbols}
-        className="mr-2"
-        onChange={handleIncludeSymbolsChange}
+        type="checkbox"
+        className="mr-3 mb-3 mt-2 accent-PastelGreen"
+        onChange={handleIncludesymbolsChange}
       />
-      <label htmlFor="includeSymbols">Include Symbols</label>
+      <label htmlFor="includeSymbols" className="text-sm">
+        Include Symbols
+      </label>
     </div>
   );
 }

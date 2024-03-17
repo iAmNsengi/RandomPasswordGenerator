@@ -1,24 +1,26 @@
-type IncludeLowercaseProps = {
-  includeLowercase: boolean;
-  setIncludeLowercase: (include: boolean) => void;
+type includeLowerCaseProps = {
+  includeLowerCase: boolean;
+  setIncludeLowerCase: (include: boolean) => void;
 };
-export default function IncludeLowercase({
-  includeLowercase,
-  setIncludeLowercase,
-}: IncludeLowercaseProps) {
+export default function IncludeLowerCase({
+  includeLowerCase,
+  setIncludeLowerCase,
+}: includeLowerCaseProps) {
   function handleIncludeLowercaseChange() {
-    setIncludeLowercase(!includeLowercase);
+    setIncludeLowerCase(!includeLowerCase);
   }
   return (
-    <div className="mb-2">
+    <div>
       <input
         type="checkbox"
-        id="includeLowercase"
-        checked={includeLowercase}
-        className="mr-2"
+        id="includeLowerCase"
+        className="mr-3 accent-PastelGreen"
+        checked={includeLowerCase}
         onChange={handleIncludeLowercaseChange}
       />
-      <label htmlFor="includeLowercase">Include Lowercase Letters</label>
+      <label htmlFor="includeLowerCase" className="text-sm">
+        Include Lowercase Letters
+      </label>
     </div>
   );
 }

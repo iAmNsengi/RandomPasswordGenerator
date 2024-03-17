@@ -1,29 +1,29 @@
 import { ChangeEvent } from "react";
-
-type PasswordLengthProps = {
+type passwordLengthProps = {
   passwordLength: number;
   setPasswordLength: (length: number) => void;
 };
+
 export default function PasswordLength({
   passwordLength,
   setPasswordLength,
-}: PasswordLengthProps) {
+}: passwordLengthProps) {
   function handlePasswordLengthChange(event: ChangeEvent<HTMLInputElement>) {
-    setPasswordLength(parseInt(event.target.value, 10));
+    setPasswordLength(parseInt(event.target.value));
   }
   return (
-    <div className="mb-4">
-      <label className="flex items-center justify-between font-medium">
-        <div>Password length</div>
-        <div className="text-2xl text-PastelGreen">{passwordLength}</div>
+    <div className="mb-3 mt-2">
+      <label className="flex justify-between items-center">
+        <div className="text-sm">Character Length</div>
+        <div className="text-xl text-PastelGreen">{passwordLength}</div>
       </label>
       <input
         type="range"
-        id="passwordLength"
         min="4"
         max="20"
+        id="passwordLength"
         value={passwordLength}
-        className="w-full appearance-none h-1"
+        className="w-full bg-dark accent-PastelGreen h-1"
         onChange={handlePasswordLengthChange}
       />
     </div>
