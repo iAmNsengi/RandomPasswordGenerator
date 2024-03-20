@@ -16,6 +16,27 @@ function App() {
   const [includeNumbers, setIncludeNumbers] = useState<boolean>(true);
   const [includeSymbols, setIncludeSymbols] = useState<boolean>(false);
 
+  function calculatePasswordStrength(password: string) {
+    let strength = 0;
+    // Increment strength based on criteria
+    if (password.length >= 8) {
+      strength++;
+    }
+    if (password.match(/[a-z]/)) {
+      strength++;
+    }
+    if (password.match(/[A-Z]/)) {
+      strength++;
+    }
+    if (password.match(/\d/)) {
+      strength++;
+    }
+    if (password.match(/[$-/:-?{-~!"^_`[\]]/)) {
+      strength++;
+    }
+    return strength;
+  }
+
   function handleGeneratePassword() {
     const newPassword = generatePassword({
       length: passwordLength,
@@ -36,6 +57,7 @@ function App() {
         .classList.remove("hidden");
     }
   }
+  const passwordStrength = calculatePasswordStrength(password || "");
   return (
     <div className="font-JetBrains bg-black flex gap-4  flex-col justify-center min-h-screen text-white items-center">
       <div>
@@ -84,13 +106,61 @@ function App() {
         <div className="bg-Blackish p-3 mt-2 mb-2 w-full flex justify-between items-center">
           <label className="uppercase text-xs opacity-60 ">strength</label>
           <div className="flex items-center">
-            <label className="text-sm opacity-80 mr-2">MEDIUM</label>
-            <div className="flex items-center justify-between">
-              <span className="w-[5px] h-[18px] border border-solid mr-1"></span>
-              <span className="w-[5px] h-[18px] border border-solid mr-1"></span>
-              <span className="w-[5px] h-[18px] border border-solid mr-1"></span>
-              <span className="w-[5px] h-[18px] border border-solid mr-1"></span>
-            </div>
+            {passwordStrength >= 5 ? (
+              <>
+                <label className="text-sm opacity-80 mr-2">STRONG </label>
+                <div className="flex items-center justify-between">
+                  {" "}
+                  <span className=" bg-PastelGreen w-[5px] h-[18px] border border-solid mr-1"></span>{" "}
+                  <span className="bg-PastelGreen w-[5px] h-[18px] border border-solid mr-1"></span>{" "}
+                  <span className="bg-PastelGreen w-[5px] h-[18px] border border-solid mr-1"></span>{" "}
+                  <span className="bg-PastelGreen w-[5px] h-[18px] border border-solid mr-1"></span>
+                </div>{" "}
+              </>
+            ) : passwordStrength >= 4 ? (
+              <>
+                <label className="text-sm opacity-80 mr-2">MEDIUM </label>
+                <div className="flex items-center justify-between">
+                  {" "}
+                  <span className=" bg-Yellowish w-[5px] h-[18px] border border-solid mr-1"></span>{" "}
+                  <span className="bg-Yellowish w-[5px] h-[18px] border border-solid mr-1"></span>{" "}
+                  <span className="bg-Yellowish w-[5px] h-[18px] border border-solid mr-1"></span>{" "}
+                  <span className=" w-[5px] h-[18px] border border-solid mr-1"></span>
+                </div>{" "}
+              </>
+            ) : passwordStrength >= 3 ? (
+              <>
+                <label className="text-sm opacity-80 mr-2">WEAK </label>
+                <div className="flex items-center justify-between">
+                  {" "}
+                  <span className=" bg-OrangeRed2 w-[5px] h-[18px] border border-solid mr-1"></span>{" "}
+                  <span className="bg-OrangeRed2 w-[5px] h-[18px] border border-solid mr-1"></span>{" "}
+                  <span className="w-[5px] h-[18px] border border-solid mr-1"></span>{" "}
+                  <span className=" w-[5px] h-[18px] border border-solid mr-1"></span>
+                </div>{" "}
+              </>
+            ) : passwordStrength >= 2 ? (
+              <>
+                <label className="text-sm opacity-80 mr-2">TOO WEAK! </label>
+                <div className="flex items-center justify-between">
+                  {" "}
+                  <span className=" bg-OrangeRed w-[5px] h-[18px] border border-solid mr-1"></span>{" "}
+                  <span className="w-[5px] h-[18px] border border-solid mr-1"></span>{" "}
+                  <span className="w-[5px] h-[18px] border border-solid mr-1"></span>{" "}
+                  <span className=" w-[5px] h-[18px] border border-solid mr-1"></span>
+                </div>{" "}
+              </>
+            ) : (
+              <>
+                <div className="flex items-center justify-between">
+                  {" "}
+                  <span className=" w-[5px] h-[18px] border border-solid mr-1"></span>{" "}
+                  <span className="w-[5px] h-[18px] border border-solid mr-1"></span>{" "}
+                  <span className="w-[5px] h-[18px] border border-solid mr-1"></span>{" "}
+                  <span className=" w-[5px] h-[18px] border border-solid mr-1"></span>
+                </div>{" "}
+              </>
+            )}
           </div>
         </div>
         <button
