@@ -18,7 +18,6 @@ function App() {
 
   function calculatePasswordStrength(password: string) {
     let strength = 0;
-    // Increment strength based on criteria
     if (password.length >= 8) {
       strength++;
     }
