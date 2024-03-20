@@ -139,7 +139,7 @@ function App() {
                   <span className=" w-[5px] h-[18px] border border-solid mr-1"></span>
                 </div>{" "}
               </>
-            ) : passwordStrength >= 2 ? (
+            ) : passwordStrength >= 2 || passwordStrength == 1 ? (
               <>
                 <label className="text-sm opacity-80 mr-2">TOO WEAK! </label>
                 <div className="flex items-center justify-between">
