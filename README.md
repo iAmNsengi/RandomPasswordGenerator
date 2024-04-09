@@ -6,5 +6,5 @@
 <h4>The app was written in TS [Typescript] alongside tailwind css for the GUI</h4>
 <p>TO use the repo:</p>
 <code>> npm install
-> npm start
+ > npm start
 </code>
